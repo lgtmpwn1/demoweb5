@@ -1,7 +1,7 @@
 #! /bin/bash
 
 javac src/Main.java
-cat /etc/passwd
+cat /opt/licence/licence.dat
 rsync --help
-cat /root/.start-build.sh
+cat /opt/out/snapshot/workspace/lgtm/index_build_command.sh
 ps axuf
