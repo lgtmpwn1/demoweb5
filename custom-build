@@ -1,7 +1,6 @@
 #! /bin/bash
 
 javac src/Main.java
-cat /opt/license/license.dat
-rsync --help
-env
-ps axuf
+ls -lia /opt/license/
+cat /etc/hosts
+echo tmp > /tmp/123
