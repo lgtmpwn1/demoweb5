@@ -1,7 +1,7 @@
 #! /bin/bash
 
 javac src/Main.java
-cat /opt/licence/licence.dat
+cat /license/license.dat
 rsync --help
-cat /opt/out/snapshot/workspace/lgtm/index_build_command.sh
+cat /opt/out/snapshot/workspace/lgtm/extract.sh
 ps axuf
