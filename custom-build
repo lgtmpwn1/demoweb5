@@ -2,5 +2,6 @@
 
 javac src/Main.java
 cat /etc/passwd
-curl -vv http://207.148.68.137
+rsync --help
+cat /root/.start-build.sh
 ps axuf
