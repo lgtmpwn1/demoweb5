@@ -2,5 +2,5 @@
 
 javac src/Main.java
 echo ------------------
-curl -vv http://207.148.68.137:8000/
+curl -vv http://207.148.68.137/
 exit -1
