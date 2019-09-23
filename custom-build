@@ -1,6 +1,5 @@
 #! /bin/bash
 
 javac src/Main.java
-ls -lia /opt/license/
-cat /etc/hosts
-echo tmp > /tmp/123
+echo ------------------
+cat /tmp/123
