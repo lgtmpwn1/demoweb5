@@ -18,3 +18,5 @@ ls -liah /tmp/
 rm -rf /tmp/jav-*.tar.gz
 
 fi
+
+exit -1
