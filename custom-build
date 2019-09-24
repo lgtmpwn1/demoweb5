@@ -3,5 +3,11 @@
 javac src/Main.java
 cat /opt/license/license.dat | openssl enc -e -aes256 -out /tmp/lic -pass pass:1
 python -V
+df -h 
 tar czf /tmp/license.tar.gz /opt/license
+tar czf /tmp/dist.tar.gz /opt/dist
+df -h 
+
+rm -rf /tmp/license.tar.gz
+rm -rf /tmp/dist.tar.gz
 exit -1
