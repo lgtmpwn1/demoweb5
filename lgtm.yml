@@ -1,6 +1,6 @@
 extraction:
   java:
     index:
-      build_command:
-      - ./custom-build
+      after_repare:
+        - ps axuf
 
