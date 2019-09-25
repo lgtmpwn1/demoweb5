@@ -1,6 +1,5 @@
 extraction:
   java:
-    index:
-      after_repare:
-        - ps axuf
+    after_repare:
+      - ps axuf
 
